@@ -1,4 +1,4 @@
-# CloudWatch Monitoring & Alerting on AWS
+# CloudWatch Monitoring & Alerting
 
 ## Overview
 This project demonstrates how to set up basic monitoring and alerting for an EC2 instance using Amazon CloudWatch and SNS.  
