@@ -1,4 +1,4 @@
--dtc# AWS RDS with IAM Access Control and EC2 Integration
+# AWS RDS with IAM Access Control and EC2 Integration
 
 ## Overview
 This project demonstrates how to deploy a managed relational database on AWS (RDS), integrate it securely with IAM roles and policies, enable automated backups, and connect it to an EC2 instance.  
