@@ -1,8 +1,7 @@
 # AWS RDS with IAM Access Control and EC2 Integration
 
 ## Overview
-This project demonstrates how to deploy a managed relational database on AWS (RDS), integrate it securely with IAM roles and policies, enable automated backups, and connect it to an EC2 instance.  
-It also shows snapshot creation for backup and recovery.
+This project demonstrates how to deploy a managed relational database on AWS (RDS), integrate it securely with IAM roles and policies, enable automated backups, and connect it to an EC2 instance. It also shows snapshot creation for backup and recovery. This project solves the challenge of securely deploying and managing a relational database in the cloud.
 
 ## AWS Services Used
 - Amazon RDS (Relational Database Service)
@@ -30,3 +29,8 @@ The EC2 instance was able to connect and interact with the database securely.
 - Secure EC2-RDS integration
 - Automated backups and snapshot management
 - Cloud architecture and security best practices
+
+## Potential Issues & Fixes
+- EC2 can’t connect to RDS - Check VPC, security groups, and IAM role attachment
+- Permission errors - Ensure IAM role has correct RDS access policies
+- Backups not happening - Verify automated backups are enabled and snapshot schedule is correct
