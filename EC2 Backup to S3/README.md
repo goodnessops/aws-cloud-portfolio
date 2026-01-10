@@ -1,7 +1,7 @@
 # EC2 Backup to S3 Using IAM Role
 
 ## Overview
-This project demonstrates how to securely back up files and logs from an EC2 instance to Amazon S3 using IAM roles instead of access keys.
+This project demonstrates how to securely back up files and logs from an EC2 instance to Amazon S3 using IAM roles instead of access keys. This project solves the problem of securely backing up EC2 files without storing AWS credentials on the server.
 
 ## AWS Services Used
 - EC2
@@ -27,3 +27,8 @@ Files and logs were successfully backed up to S3 without storing AWS credentials
 - S3 object storage
 - AWS security best practices
 
+## Potential Issues & Fixes
+- Backup fails - Ensure IAM role has correct S3 permissions
+- EC2 cannot access S3 - Verify the IAM role is attached to the instance
+- Files not appearing in S3 - Check bucket name, object paths, and network connectivity
+- Permissions too open - Use least-privilege policies to restrict access
