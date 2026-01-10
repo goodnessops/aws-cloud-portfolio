@@ -20,5 +20,5 @@ User → CloudFront (HTTPS) → S3 Static Website Bucket
 5. Configured CloudFront to serve the site over HTTPS
 
 ## Outcome
-The static website was successfully deployed and served securely over HTTPS using CloudFront
+The static website was successfully deployed and served securely over HTTPS using CloudFront - http://static-site-portfolio-01.s3-website.eu-north-1.amazonaws.com/
 
