@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Launch EC2 Web Server (Nginx) accessible via your IP in eu-north-1
+
+Resources:
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH and HTTP access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 51.20.144.221/32   # Your public IP for SSH
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0          # HTTP open to everyone
+
+  WebServerInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      KeyName: "Portfolio key"       # Your Key Pair
+      SecurityGroups:
+        - !Ref WebServerSecurityGroup
+      ImageId: !Ref LatestAmazonLinux2AMI
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          amazon-linux-extras install nginx1 -y
+          systemctl start nginx
+          systemctl enable nginx
+
+Parameters:
+  LatestAmazonLinux2AMI:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+
+Outputs:
+  WebServerPublicIP:
+    Description: Public IP of the web server
+    Value: !GetAtt WebServerInstance.PublicIp
+
+  WebServerURL:
+    Description: URL to access the web server
+    Value: !Sub "http://${WebServerInstance.PublicIp}"
