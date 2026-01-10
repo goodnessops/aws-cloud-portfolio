@@ -1,7 +1,7 @@
 # Auto Scaling with Application Load Balancer on AWS
 
 ## Overview
-This project demonstrates how to deploy a highly available and scalable application on AWS using an Auto Scaling Group (ASG) and an Application Load Balancer (ALB).
+This project demonstrates how to deploy a highly available and scalable application on AWS using an Auto Scaling Group (ASG) and an Application Load Balancer (ALB). This project addresses the need for a highly available and scalable application.
 
 ## AWS Services Used
 - Amazon EC2
@@ -26,3 +26,9 @@ The application was successfully accessed through the Application Load Balancer,
 - Load balancing
 - Auto scaling
 - High availability architecture
+
+## Potential Issues & Fixes
+- Application not reachable – Check ALB listener, target group, and security group settings
+- Instances not scaling – Verify Auto Scaling Group min/max values and scaling policies
+- ALB health checks failing – Ensure EC2 instances are healthy and application is running on correct ports
+- High latency or errors – Check instance capacity and network configuration
