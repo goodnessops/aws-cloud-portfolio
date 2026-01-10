@@ -1,8 +1,7 @@
 # CloudWatch Monitoring & Alerting
 
 ## Overview
-This project demonstrates how to set up basic monitoring and alerting for an EC2 instance using Amazon CloudWatch and SNS.  
-It ensures proactive notifications when CPU utilization exceeds a threshold, simulating a real-world cloud support monitoring scenario.
+This project demonstrates how to set up basic monitoring and alerting for an EC2 instance using Amazon CloudWatch and SNS. It ensures proactive notifications when CPU utilization exceeds a threshold, simulating a real-world cloud support monitoring scenario. This project solves the problem of not knowing when an EC2 instance is under high load.
 
 ## AWS Services Used
 - Amazon CloudWatch
@@ -27,3 +26,8 @@ CPU alerts were successfully sent via SNS email notifications, ensuring that sys
 - SNS topic creation and subscription
 - Real-time alerting for system monitoring
 - Basic cloud operational monitoring
+
+## Potential Issues & Fixes
+- No alerts received - Check SNS subscription and confirm email is verified
+- Alarm not triggering - Verify CPU threshold, evaluation period, and metric selection
+- Incorrect notifications - Ensure the correct SNS topic is linked to the CloudWatch alarm
