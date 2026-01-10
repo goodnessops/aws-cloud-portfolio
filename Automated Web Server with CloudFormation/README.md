@@ -14,7 +14,7 @@ This project demonstrates how to deploy a web server using AWS CloudFormation. T
 User → Internet → EC2 Instance (provisioned via CloudFormation) → Nginx Web Server
 
 ## Steps Performed
-1. Created a CloudFormation template to launch an EC2 instance with security group configuration
+1. Created a CloudFormation template to launch an EC2 instance with security group configuration with assist
 2. Automated Nginx installation using a user-data script
 3. Deployed the stack in AWS
 4. Verified the EC2 instance and security group creation
